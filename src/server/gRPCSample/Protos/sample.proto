@@ -1,0 +1,43 @@
+syntax = "proto3";
+option csharp_namespace="MyNameSpace"; 
+
+service Samples{
+
+	rpc UnarySample(Request) returns (CountryResponse);
+	rpc ServerStreamingSample(PaginatedRequest) returns (stream CountryCollectionResponse);
+	rpc ClientStreamingSample(stream CountryCollectionRequest) returns(CountryCollectionResponse);
+	rpc BidiStreamingSample(stream CountryCollectionRequest) returns (stream CountryCollectionResponse);
+
+	rpc Login(LoginRequest) returns(Empty);
+}
+
+message Request{ 
+	int32 id = 1;
+	string requestTime=2;
+}
+
+message PaginatedRequest{
+	int32 pageSize=1;
+	string requestTime=2;
+}
+message CountryCollectionResponse{
+	repeated CountryResponse Countries=1;
+}
+
+message CountryCollectionRequest{
+	repeated Request requests=1;
+}
+
+message CountryResponse{
+	string name=1;
+	string twoCharName=2;
+	string threeCharName=3;
+	string requestTime=4;
+}
+
+message LoginRequest{
+	string username=1;
+	string password=2;
+}
+
+message Empty{}
