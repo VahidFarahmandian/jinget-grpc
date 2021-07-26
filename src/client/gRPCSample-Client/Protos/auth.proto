@@ -5,6 +5,7 @@ service Authenticate{
 
 	rpc Login(LoginRequest) returns(Empty);
 	rpc RestrictedSource(Empty)returns(AuthorizeResponse);
+	rpc Reflection(Empty) returns(AuthorizeResponse);
 }
 
 message LoginRequest{

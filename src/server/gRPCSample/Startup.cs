@@ -18,8 +18,8 @@ namespace gRPCSample
         {
             services.AddGrpc(x =>
             {
-               // x.MaxReceiveMessageSize = 1;//1 byte
-               // x.MaxSendMessageSize = 1;
+                // x.MaxReceiveMessageSize = 1;//1 byte
+                // x.MaxSendMessageSize = 1;
             });
             //services.AddGrpc().AddServiceOptions<SampleService>(options =>
             //{
@@ -51,6 +51,7 @@ namespace gRPCSample
                 });
 
             services.AddAuthorization();
+            //services.AddTransient<IAuthorizationHandler, gRPCSample.Middlewares.AuthorizationHandler>();
             services.AddGrpcReflection();
         }
 
@@ -69,6 +70,7 @@ namespace gRPCSample
             {
                 endpoints.MapGrpcService<SampleService>();
                 endpoints.MapGrpcService<AuthenticationService>();
+                endpoints.MapGrpcService<ReflectionService>();
                 if (env.IsDevelopment())
                 {
                     endpoints.MapGrpcReflectionService();

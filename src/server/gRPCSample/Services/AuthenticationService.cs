@@ -13,12 +13,6 @@ namespace gRPCSample.Services
 {
     public class AuthenticationService : Auth.Authenticate.AuthenticateBase
     {
-        private readonly ILogger<AuthenticationService> logger;
-
-        public AuthenticationService(ILogger<AuthenticationService> logger)
-        {
-            this.logger = logger;
-        }
         public override async Task<Auth.Empty> Login(Auth.LoginRequest request, ServerCallContext context)
         {
             var tokenHandler = new JwtSecurityTokenHandler();
@@ -45,7 +39,6 @@ namespace gRPCSample.Services
         public override async Task<AuthorizeResponse> Reflection(Empty request, ServerCallContext context)
         {
             var response = new AuthorizeResponse() { Message = "Hello reflection" };
-            logger.LogDebug(response.Message);
             return await Task.FromResult(response);
         }
     }

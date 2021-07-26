@@ -16,7 +16,7 @@ namespace gRPCSample.Middlewares
         {
             try
             {
-                bool hasToken = ((DefaultHttpContext)context.Resource).Request.Headers.TryGetValue("Auth-Token", out StringValues token);
+                bool hasToken = ((DefaultHttpContext)context.Resource).Request.Headers.TryGetValue("Authorization", out StringValues token);
 
                 if (hasToken is not true)
                 {

@@ -88,10 +88,11 @@ namespace gRPCSample_Client
 
         internal async Task<CountryCollectionResponse> ClientStreamingSampleAsync()
         {
-            CancellationTokenSource source = new CancellationTokenSource();
-            CancellationToken token = source.Token;
+            //CancellationTokenSource source = new CancellationTokenSource();
+            //CancellationToken token = source.Token;
 
-            var call = client.ClientStreamingSample(cancellationToken: token);
+            //var call = client.ClientStreamingSample(cancellationToken: token);
+            var call = client.ClientStreamingSample();
             for (int i = 1; i <= 250; i += 30)
             {
                 var request = new CountryCollectionRequest();
@@ -106,8 +107,8 @@ namespace gRPCSample_Client
                     }
                 });
                 await call.RequestStream.WriteAsync(request);
-                if (i > 100)
-                    source.Cancel();
+                //if (i > 100)
+                //    source.Cancel();
                 await Task.Delay(TimeSpan.FromSeconds(2));
             }
             await call.RequestStream.CompleteAsync();

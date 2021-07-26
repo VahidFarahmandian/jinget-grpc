@@ -1,6 +1,5 @@
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Hosting;
-using Microsoft.Extensions.Logging;
 namespace gRPCSample
 {
     public class Program
@@ -16,6 +15,6 @@ namespace gRPCSample
             .ConfigureWebHostDefaults(webBuilder =>
             {
                 webBuilder.UseStartup<Startup>();
-            }).ConfigureLogging(logging => { logging.AddConsole(); });
+            });
     }
 }

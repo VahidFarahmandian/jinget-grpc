@@ -1,0 +1,13 @@
+syntax = "proto3";
+option csharp_namespace="Reflection"; 
+
+service ReflectionService{
+
+	rpc Reflection(Empty) returns(Response);
+}
+
+message Empty{}
+
+message Response{
+	string message=1;
+}
