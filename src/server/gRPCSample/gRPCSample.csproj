@@ -5,19 +5,24 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <None Remove="Protos\reflection.proto" />
-  </ItemGroup>
-
-  <ItemGroup>
+    
+    <!--C# runtime library for Protocol Buffers-->
     <PackageReference Include="Google.Protobuf" Version="3.17.3" />
+    
+    <!--gRPC meta-package for ASP.NET Core-->
     <PackageReference Include="Grpc.AspNetCore" Version="2.38.0" />
+    
+    <!--Automatic discovery of services for Grpc.Reflection-->
     <PackageReference Include="Grpc.AspNetCore.Server.Reflection" Version="2.38.0" />
+    
+    <!--C# implementation of gRPC based on native gRPC C-core library.Managed runtime-->
     <PackageReference Include="Grpc.Core" Version="2.38.1" />
-    <PackageReference Include="Grpc.Net.Client" Version="2.38.0" />
+    <!--contains the compilers to compile proto files to code-->
     <PackageReference Include="Grpc.Tools" Version="2.38.1">
       <PrivateAssets>all</PrivateAssets>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
     </PackageReference>
+    
     <PackageReference Include="Microsoft.AspNetCore.Authentication.JwtBearer" Version="5.0.8" />
     <PackageReference Include="Microsoft.EntityFrameworkCore" Version="5.0.8" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.Relational" Version="5.0.8" />

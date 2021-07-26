@@ -46,6 +46,7 @@ namespace gRPCSample_Client
                     }
                 }
                 );
+            
             client = new Samples.SamplesClient(channel);
             authClient = new Auth.Authenticate.AuthenticateClient(channel);
         }
@@ -109,7 +110,7 @@ namespace gRPCSample_Client
                 await call.RequestStream.WriteAsync(request);
                 //if (i > 100)
                 //    source.Cancel();
-                await Task.Delay(TimeSpan.FromSeconds(2));
+                await Task.Delay(TimeSpan.FromSeconds(1));
             }
             await call.RequestStream.CompleteAsync();
 
