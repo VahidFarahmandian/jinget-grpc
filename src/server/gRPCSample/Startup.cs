@@ -16,7 +16,6 @@ namespace gRPCSample
     {
         public void ConfigureServices(IServiceCollection services)
         {
-            
             services.AddGrpc(x =>
             {
                 // x.MaxReceiveMessageSize = 1;//1 byte
