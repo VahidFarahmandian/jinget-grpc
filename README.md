@@ -1,3 +1,5 @@
+[![Build Status](https://dev.azure.com/farahmandian/GitHub/_apis/build/status/VahidFarahmandian.jinget-grpc?branchName=main)](https://dev.azure.com/farahmandian/GitHub/_build/latest?definitionId=59&branchName=main)
+
 # Build High Performance Services with gRPC and .NET 5
 
 Here are some useful links to learn gRPC:
