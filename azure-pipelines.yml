@@ -1,7 +1,7 @@
 trigger: none
 
 pool:
-  vmImage: 'windows-latest'
+  name: 'vahid-pool'
 
 variables:
   solution: '**/*.sln'
