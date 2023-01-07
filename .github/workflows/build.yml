@@ -27,6 +27,6 @@ jobs:
         dotnet-version: 6.0.x
         
     - name: Restore dependencies
-      run: dotnet restore ./src/**/*.sln
+      run: dotnet restore ./src/server/gRPCSample/gRPCSample.sln
     - name: Build
-      run: dotnet build ./src/**/*.sln --no-restore
+      run: dotnet build ./src/server/gRPCSample/gRPCSample.sln --no-restore
