@@ -1,4 +1,13 @@
-trigger: none
+trigger:
+  branches:
+    include:
+      - main
+  paths:
+    exclude:
+      - 'azure-pipelines.yml'
+      - 'README.md'
+      - '.gitignore'
+      - '.gitattributes'
 
 pool:
   name: 'vahid-pool'
