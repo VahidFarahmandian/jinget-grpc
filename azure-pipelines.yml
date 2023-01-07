@@ -9,6 +9,11 @@ trigger:
       - '.gitignore'
       - '.gitattributes'
 
+pr:
+  branches:
+    include:
+      - main
+
 pool:
   name: 'vahid-pool'
 
