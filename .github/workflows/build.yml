@@ -1,0 +1,31 @@
+name: build
+
+on:
+  push:
+    branches: [ "main" ]
+    paths-ignore: 
+      - '.gitignore'
+      - '.gitattributes'
+      - 'README.md'
+  pull_request:
+    branches: [ "main" ]
+    paths-ignore: 
+      - '.gitignore'
+      - '.gitattributes'
+      - 'README.md'
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v3
+    - name: Setup .NET
+      uses: actions/setup-dotnet@v3
+      with:
+        dotnet-version: 6.0.x
+    - name: Restore dependencies
+      run: dotnet restore
+    - name: Build
+      run: dotnet build --no-restore
